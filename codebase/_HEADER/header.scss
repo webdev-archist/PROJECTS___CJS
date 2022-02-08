@@ -1,0 +1,9 @@
+@import "./header-bs.scss";
+
+body{
+    >header{
+        @extend %header-bs;
+    }
+} 
+ 
+ 

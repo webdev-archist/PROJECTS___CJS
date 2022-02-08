@@ -1,0 +1,36 @@
+
+
+%header-bs{
+    @extend .navbar; @extend .navbar-expand-md; @extend .navbar-dark; @extend .bg-dark;
+    // >div{
+    // @extend .container-fluid;
+    >a{
+      @extend .navbar-brand;
+    }
+    >button{
+      @extend .navbar-toggler;
+      >span{@extend .navbar-toggler-icon;}
+    }
+    >menu,>ul{
+      @extend .collapse; @extend .navbar-collapse;
+      list-style: none;
+      li{
+        @extend .nav-item;
+        >a{
+          @extend .nav-link; 
+          &.active{@extend .active;} 
+        }
+      }
+    // }
+    }
+    form{
+      @extend .d-flex;
+      >input{
+        @extend .form-control;
+      }
+      >button{
+        @extend .btn; 
+        @extend .btn-outline-success;
+      }
+    }
+}

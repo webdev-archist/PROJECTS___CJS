@@ -1,0 +1,6 @@
+node_modules/*
+**/node_modules/*
+
+**/img/*
+!**/img/_.txt
+!**/img/urls.txt

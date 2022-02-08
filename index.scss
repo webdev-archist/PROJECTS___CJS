@@ -1,0 +1,111 @@
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+*{box-sizing: border-box;}
+@import "./codebase/_HEADER/header.scss";
+// @import "./codebase/_NAV/nav.scss";
+// @import "./codebase/_MAIN/main.scss";
+// @import "./codebase/_ASIDE/aside.scss";
+// @import "./codebase/_FOOTER/footer.scss";
+
+
+*[contenteditable="true"]:hover{border:solid black;}
+*[contenteditable="true"]{background:green;color:lightsteelblue;padding:10px;}
+%notCloseSave{
+    position:absolute;cursor:pointer;width: 30px;
+    height: 30px;text-align: center;border-radius: 50px;
+}
+body>*>div.modifiable{display: flex;
+    position:absolute;top:0em;left:0;cursor:pointer;width: 20px;
+    height: 20px;text-align: center;border-radius: 50px;background: purple;color: white;
+    &:not(.on)>select{display:none;}
+}
+body>*>*.modifying{border:solid gold;padding:1em;position:relative;background:silver;
+    background:orange;
+    &:hover{background:brown;cursor:crosshair;}
+    &:hover *{cursor:default;}
+    div{
+        font-size: .8em;
+        &.attrs,&.css,&.closeit,&.apply,&.saveit{@extend %notCloseSave;}
+        &.attrs{top:-1em;left:0;background: purple;color: white;
+            >ul{background:silver;padding: 0;
+                list-style: none;
+                width: 200px;
+                position: relative;
+                z-index: 999;
+                padding-top:2.5em;
+                >li{
+                    border-bottom:solid;
+                    &:hover{background: goldenrod;}
+                    &:active{background: red;}
+                    &:nth-of-type(1),&:nth-of-type(2){
+                        &:hover{background:gold;}
+                        position: absolute;
+                        top: 0;
+                        padding: .5em;
+                    }
+                    &:nth-of-type(1){}
+                    &:nth-of-type(2){right:0;}
+                }
+            }
+        }
+            
+        &.css{bottom:0em;left:-1em;
+            background: blue;color: white;
+        }
+        &.closeit{
+            top:-1em;right:0;
+            background: red;color: white;}
+        &.apply{
+            top:-1em;right:-1em;
+            background: pink;color: black;
+        }
+        &.saveit{
+            top:-1em;right:3em;
+            background: greenyellow;color: white;
+        }
+    }
+    >*:not(div),>*:not(div) * {
+        position: relative;
+    }
+    >*:not(div):hover,>*:not(div) *:hover {
+        box-sizing: border-box;
+        border:solid;
+    }
+}
+/*
+body>nav[class^='navbarre'],headerbar-standard{
+    //UNE OPTION POURRA PERMETTRE DE DEFINIR LE COLLAPSE A LA VALEUR SOUHAITEE (lg,md,sm,xs,..), OPTION PAR DEFAUT A 'sm'
+    //UNE OPTION POURRA PERMETTRE DE DEFINIR LE BACKGROUND SOUHAITE(light,dark,..), OPTION PAR DEFAUT A 'light'
+    //UNE OPTION POURRA PERMETTRE DE DEFINIR si le navbar doit etre collé a un bord, et lequel(top,bottom,right,or left), OPTION PAR DEFAUT A 'top'
+    @extend .navbar; 
+    @extend .navbar-expand-sm; @extend .navbar-light;  @extend .bg-light; @extend .fixed-top;
+    &>a{@extend .navbar-brand;
+    }
+    &>button{@extend .navbar-toggler; @extend .d-lg-none;
+        &>span{@extend .navbar-toggler-icon;
+        
+        }
+    }
+    &>menu{@extend .navbar-nav; @extend .mr-auto; @extend .mt-2; @extend .mt-lg-0; @extend .collapse; @extend .navbar-collapse;
+        &>li{@extend .nav-item;
+            &>a{@extend .nav-link;
+                &>span{@extend .sr-only;}
+            }
+            &.dropdown{
+                &>a{@extend .dropdown-toggle;}
+                &>div,&>ul,&>ol,&>dt{@extend .dropdown-menu;&>a{@extend .dropdown-item;}}
+            }
+            &.active{}
+        }
+    }
+    &>form{@extend .form-inline; @extend .my-2; @extend .my-lg-0;
+        
+    }
+    &.navbarreDefault{}
+    &.navbarrePlacement{}
+    &.navbarreMinimalA{}
+    &.navbarreMinimalUl{}
+    &.navbarreBackground{}
+}
+*/
+
+

@@ -1,0 +1,32 @@
+{
+  "name": "CJS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass index.scss build/style.css -w",
+    "sass_": "sass Blocks/HEADER/HEADER-BS/header-bs.scss build/style.css -w",
+    "commit": "git add . && git commit -m",
+    "amend": "git add . && git commit --amend",
+    "push": "git push origin master -f",
+    "puush": "npm run commit && npm run push",
+    "puuush": "npm run amend && npm run push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^4.5.3",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "googleapis": "^92.0.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
+    "sass": "^1.29.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "underscore": "^1.13.2"
+  }
+}
