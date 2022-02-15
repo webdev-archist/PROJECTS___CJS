@@ -64,7 +64,7 @@ export default class CJS extends HTMLElement{
             return bool
         }
 
-        gotCJS = JSON.parse(localStorage?.getItem('cloud')||{})
+        gotCJS = JSON.parse(localStorage?.getItem('cloud')||"{}")
         this.CJS = extractFrom_gotCJS(gotCJS)
         if(!document.body.cjs){
             document.body.cjs = this.CJS
